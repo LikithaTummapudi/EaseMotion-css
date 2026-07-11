@@ -101,3 +101,117 @@ body{
         0 0 25px #00ff88;
 
 }
+.ease-cursor{
+
+    animation:blink 1s infinite;
+}
+@keyframes blink{
+
+    0%,50%{
+
+        opacity:1;
+    }
+
+    51%,100%{
+
+        opacity:0;
+    }
+
+}
+.ease-display{
+
+    animation:pulse 2s infinite;
+}
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.03);
+    }
+
+    100%{
+
+        transform:scale(1);
+    }
+
+}
+.ease-countdown::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+
+        transparent 0px,
+        transparent 3px,
+
+        rgba(255,255,255,.04) 4px
+
+    );
+
+    pointer-events:none;
+}
+.ease-countdown::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:-100%;
+
+    width:100%;
+
+    height:100px;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(0,255,136,.15),
+
+        transparent
+
+    );
+
+    animation:scanner 5s linear infinite;
+}
+@keyframes scanner{
+
+    to{
+
+        top:120%;
+    }
+
+}
+.ease-countdown{
+
+    transition:.4s;
+}
+
+.ease-countdown:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+        0 0 12px #00ff88,
+
+        0 0 40px #00ff88,
+
+        0 0 70px #00ff88,
+
+        inset 0 0 25px #00ff88;
+}
